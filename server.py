@@ -4,13 +4,12 @@ import openai
 import tempfile
 from pydub import AudioSegment
 import uuid
+from flask_cors import CORS
+
 
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('index.html')
+CORS(app)
 
 # Set up the OpenAI API key
 openai.api_key = ""

@@ -13,7 +13,7 @@ buttonSend.addEventListener("click", (e) => {
     formData.append("extension", selectedValue);
 
     loader.style.display = "block";
-    fetch("/transkriber", {
+    fetch("http://127.0.0.1:5000/transkriber", {
         method: "POST",
         body: formData,
     })
@@ -31,7 +31,7 @@ buttonSend.addEventListener("click", (e) => {
             const downloadButton = document.querySelector(".button-download");
 
             // Формування URL-адреси для завантаження файлу
-            const url = `/download/${data}`;
+            const url = `http://127.0.0.1:5000/download/${data}`;
             console.log(url);
             // Встановлення URL-адреси для завантаження файлу
             downloadButton.setAttribute("href", url);
